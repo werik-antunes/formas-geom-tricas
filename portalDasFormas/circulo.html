@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+    <title>Figuras Geométricas</title>
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html"><img src="assets/css/icones/icone-formulas geometricas.png" class=""></a>
+        <h1 class="h1fig">Calculadora da área do Círculo</h1>
+    </nav>
+    <div class="itens">
+        <img class="fig" src="assets/css/imagens/circulo.png" width="100"></a>
+    </div>
+
+    <p class="h1fig">A área de um círculo é pi vezes o raio elevado ao quadrado (A = π r²).</p>
+
+    <div class="container">
+        <p class="h1fig">PI<br /></p>
+
+        <input id="n1" type="number" value="3.14" disabled /><br />
+        <br><br />
+        <p class="h1fig">Raio<br /></p>
+
+        <input id="n2" type="number" /><br /><br />
+        <br><br />
+        <button id="btn2">Enviar</button><br />
+
+        <br />
+
+        <p class="h1fig"> O Resultado é <span id="exemplo"></span></p>
+    </div>
+
+    <script>
+
+        document.getElementById("btn2").addEventListener("click", enviar)
+
+        function enviar() {
+            var ray = document.getElementById('n2').value;
+            var area = Math.PI * ray * ray;
+
+            console.log("A área do círculo é: " + area);
+            document.getElementById("exemplo").innerHTML = area;
+        }   
+    </script>
+</body>
+
+</html>

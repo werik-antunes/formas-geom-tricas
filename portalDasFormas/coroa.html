@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+    <title>Figuras Geométricas</title>
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html"><img src="assets/css/icones/icone-formulas geometricas.png" class=""></a>
+        <h1 class="h1fig">Calculadora da área Coroa do Círculo</h1>
+    </nav>
+    <div class="itens">
+        <img class="fig" src="assets/css/imagens/coroa.png" width="100" alt="">
+    </div>
+    <p class="h1fig">A área da coroa do círculo pode ser calculada através da diferença entre as áreas totais, isto é,
+        área do círculo maior menos a área do círculo menor. Quando duas ou mais circunferências possuem o mesmo centro,
+        são denominadas concêntricas. Nesse caso elas podem ter raio de tamanhos diferentes.</p>
+    <br />
+    <div class="container">
+        <p class="h1fig">Raio maior<br /> </p>
+
+        <input id="raioMaior" type="number" value="3.14" disabled /><br />
+
+        <p class="h1fig">Raio menor<br /> </p>
+
+        <input id="raioMenor" type="number" /><br /><br />
+
+        <button id="btt" onclick="calcularArea()">Enviar</button>
+        <br />
+
+        <p class="h1fig">O Resultado é <span id="resultado"></span> </p>
+    </div>
+    <script>
+        function calcularArea() {
+            const raioMaior = parseFloat(document.getElementById('raioMaior').value);
+            const raioMenor = parseFloat(document.getElementById('raioMenor').value);
+
+            if (isNaN(raioMaior) || isNaN(raioMenor)) {
+                alert('Por favor, insira valores válidos para os raios.');
+                return;
+            }
+
+            if (raioMaior <= raioMenor) {
+                alert('O raio maior deve ser maior que o raio menor.');
+                return;
+            }
+
+            const area = Math.PI * (raioMaior ** 2 - raioMenor ** 2);
+            document.getElementById('resultado').textContent = area.toFixed(2);
+        }
+    </script>
+</body>
+
+</html>

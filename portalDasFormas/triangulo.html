@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+    <title>Figuras Geométricas</title>
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html"><img src="assets/css/icones/icone-formulas geometricas.png" class=""></a>
+        <h1 class="h1fig">Calculadora da área do Triângulo</h1>
+    </nav>
+    <div class="itens">
+        <img class="fig" src="assets/css/imagens/triangulo.png" width="100">
+    </div>
+    <p class="h1fig">Área do triângulo é igual à metade do produto entre a sua base e a sua altura. Existem, ainda,
+        outras formas de se calcular a área de um triângulo. A área do triângulo é igual à medida da sua superfície.</p>
+    <br />
+    <div class="container">
+        <p class="h1fig">Base<br /> </p>
+
+        <input id="n1" type="number" /><br />
+        <br><br />
+        <p class="h1fig">Altura<br /> </p>
+
+        <input id="n2" type="number" /><br /><br />
+        <br><br />
+        <button onclick="enviar()">Enviar</button><br />
+        <br><br />
+
+        <p class="h1fig">O Resultado é <span></span> </p>
+    </div>
+    <script>
+        var n1 = document.querySelector('#n1')
+        var n2 = document.querySelector('#n2')
+        var resultado = document.querySelector('span')
+
+        function enviar() {
+            resultado.innerHTML = parseInt(n1.value) * parseInt(n2.value) / 2
+        }
+
+    </script>
+</body>
+
+</html>

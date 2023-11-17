@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+    <title>Figuras Geométricas</title>
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html"><img src="assets/css/icones/icone-formulas geometricas.png" class=""></a>
+        <h1 class="h1fig">Calculadora da área Setor Círcular</h1>
+    </nav>
+    <div class="itens">
+        <img class="fig" src="assets/css/imagens/setor.png" width="100">
+    </div>
+    <p class="h1fig">Além disso, sabemos que a área de um círculo pode ser encontrada usando a fórmula A = π r 2 A=\pi
+        r^2 A=πr2, onde r é o raio do círculo. onde, θ é o ângulo que representa o setor dado em graus e r é o raio do
+        círculo.</p>
+    <br />
+    <div class="container">
+        <p class="h1fig">Raio do círculo maior</p>
+        
+        <input type="number" id="raioMaior">
+        <br><br />
+       
+        <p class="h1fig">Ângulo do setor em graus</p>
+        
+        <input type="number" id="angulo">
+        
+        <br><br/>
+        <button id="btt" onclick="calcularArea()">Enviar</button>
+        <br><br />
+        <p class="h1fig">A área do setor circular é: <span id="resultado"></span></p>
+        <br><br />
+    </div>
+    <script>
+        function calcularArea() {
+            const raioMaior = parseFloat(document.getElementById('raioMaior').value);
+            const angulo = parseFloat(document.getElementById('angulo').value);
+
+            if (isNaN(raioMaior) || isNaN(angulo) || raioMaior <= 0 || angulo <= 0 || angulo > 360) {
+                alert('Por favor, insira valores válidos para o raio do círculo maior e o ângulo do setor.');
+                return;
+            }
+
+            const areaCirculoMaior = Math.PI * (raioMaior ** 2);
+            const areaSetor = (angulo / 360) * areaCirculoMaior;
+            const raioSetor = (angulo / 360) * raioMaior;
+            const areaTriangulo = (raioSetor * raioMaior) / 2;
+            const areaFinal = areaSetor - areaTriangulo + areaCirculoMaior;
+            document.getElementById('resultado').textContent = areaFinal.toFixed(2);
+        }
+    </script>
+
+
+</body>
+
+</html>

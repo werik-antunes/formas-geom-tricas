@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+    <title>Figuras Geométricas</title>
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html"><img src="assets/css/icones/icone-formulas geometricas.png" class=""></a>
+        <h1 class="h1fig">Calculadora da área Polígono</h1>
+    </nav>
+    <div class="itens">
+        <img class="fig" src="assets/css/imagens/poligono.png" width="100">
+    </div>
+    <p class="h1fig">A área do polígono regular, figura que possui lados e ângulos congruentes, é obtida pelo produto de
+        seu semiperímetro por seu apótema.</p>
+    <br />
+    <div class="container">
+        <select id="lados">
+            <option value="3">Três</option>
+            <option value="4">Quatro</option>
+            <option value="5">Cinco</option>
+            <option value="6">Seis</option>
+            <option value="7">Sete</option>
+            <option value="8">Oito</option>
+            <option value="9">Nove</option>
+            <option value="10">Dez</option>
+        </select>
+        <br><br/>
+        <button id="btt" onclick="calcularArea()">Enviar</button>
+        <br><br/>
+        <p class="h1fig">A área do polígono regular é: <span id="resultado"></span></p>
+    </div>
+    <script>
+        function calcularArea() {
+            const numLados = parseInt(document.getElementById('lados').value);
+
+            if (isNaN(numLados) || numLados < 3 || numLados > 10) {
+                alert('Por favor, escolha um número válido de lados entre 3 e 10.');
+                return;
+            }
+
+            const lado = 100; // Comprimento do lado (valor hipotético para este exemplo)
+            const apotema = lado / (2 * Math.tan(Math.PI / numLados)); // Cálculo do apótema
+            const areaTriangulo = (lado * apotema) / 2; // Área de um triângulo
+            const areaTotal = areaTriangulo * numLados; // Área total
+
+            document.getElementById('resultado').textContent = areaTotal.toFixed(2);
+        }
+    </script>
+</body>
+
+</html>

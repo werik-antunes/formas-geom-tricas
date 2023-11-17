@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+    <title>Figuras Geométricas</title>
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html"><img src="assets/css/icones/icone-formulas geometricas.png" class=""></a>
+        <h1 class="h1fig">Calculadora da área do Retângulo </h1>
+    </nav>
+    <div class="itens">
+        <img class="fig" src="assets/css/imagens/retangulo.png" width="100">
+    </div>
+    <p class="h1fig">Para calcular a área do retângulo, basta calcular o produto entre a sua base e a sua altura, ou
+        seja, a área é dada pela fórmula A=b⋅h. Além da área, outra grandeza importante é o perímetro.</p>
+    <br />
+    <div class="container">
+        <p class="h1fig">Base<br /> </p>
+
+        <input type="number" id="base" /><br />
+        <br><br />
+        <p class="h1fig">Altura<br /> </p>
+
+        <input type="number" id="altura" /><br /><br />
+
+        <button id="btt" onclick="enviar()">Enviar</button><br />
+
+        <p class="h1fig">O Resultado é <span id="resultado"></span> </p>
+    </div>
+    <script>
+        function enviar() {
+            const base = parseFloat(document.getElementById('base').value);
+            const altura = parseFloat(document.getElementById('altura').value);
+            const area = base * altura ;
+            document.getElementById('resultado').textContent = area.toFixed(2) ;
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+    <title>Figuras Geométricas</title>
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html"><img src="assets/css/icones/icone-formulas geometricas.png" class=""></a>
+        <h1 class="h1fig">Calculadora da área do Tronco de Pirâmide</h1>
+    </nav>
+    <div class="itens">
+        <img class="fig" src="assets/css/imagens/tronco-piramide.png" width="100">
+    </div>
+    <p class="h1fig">O tronco de pirâmide é o sólido obtido da parte inferior de uma pirâmide quando realizada uma
+        secção transversal. Para calcular a área total do tronco de pirâmide, somamos as suas áreas laterias e as áreas
+        das bases maior e menor.
+    </p>
+    <br />
+    <div class="container">
+        <p class="h1fig">Digite o raio menor</p>
+
+        <input type="number" id="raioMenor">
+        <br><br />
+        <p class="h1fig">Digite o raio maior</p>
+
+        <input type="number" id="raioMaior">
+        <br><br />
+        <p class="h1fig">Digite a altura</p>
+
+        <input type="number" id="altura">
+        <br><br />
+        <button id="btt" onclick="calcularVolume()">Enviar</button>
+        <br><br />
+        <p id="resultado"></p>
+    </div>
+    <script>
+        function calcularVolume() {
+            var raioMenor = parseFloat(document.getElementById("raioMenor").value);
+            var raioMaior = parseFloat(document.getElementById("raioMaior").value);
+            var altura = parseFloat(document.getElementById("altura").value);
+
+            if (isNaN(raioMenor) || isNaN(raioMaior) || isNaN(altura) || raioMenor <= 0 || raioMaior <= 0 || altura <= 0) {
+                alert("Por favor, digite valores válidos para os raios e a altura.");
+                return;
+            }
+
+            var volume = (1 / 3) * Math.PI * altura * (Math.pow(raioMaior, 2) + Math.pow(raioMenor, 2) + (raioMaior * raioMenor));
+            document.getElementById("resultado").innerHTML = "O volume do tronco de pirâmide é: " + volume.toFixed(2);
+        }
+    </script>
+</body>
+
+</html>

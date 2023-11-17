@@ -1,0 +1,36 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-color: #EBBA2D;
+}
+.h1fig {
+    text-align: center;
+    font-size:25px ;
+}
+.itens{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+   margin-left: 30%;
+   margin-top: 5%;
+   margin-right: 30%;
+   text-align: center;
+   border-radius: 10px;
+}
+.prin{
+    text-align: center;
+    padding: 30px;
+}
+.figura{
+   
+    display: inline-block;
+    padding-left: 200px ;
+    padding-bottom: 80px;
+    padding-right: 50px ;
+}
